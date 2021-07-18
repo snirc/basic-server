@@ -49,7 +49,7 @@ public final class MainVerticle extends MainAbstractVerticle {
 					"io.vertx.core.logging.Log4j2LogDelegateFactory");
 			System.out.println("Parameters______________");			
 			String verticleName = AppConfig.AppParameters.getOrDefault("Verticle", MainVerticle.class.getName());
-			
+
 			Class<?> ctClass = Class.forName(verticleName);
 			AbstractVerticle verticle = (AbstractVerticle) ctClass.getDeclaredConstructor().newInstance();
 			AppConfig.AppParameters.put("APP", "basic-server");
